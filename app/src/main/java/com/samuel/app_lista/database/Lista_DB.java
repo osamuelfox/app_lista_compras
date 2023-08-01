@@ -28,7 +28,7 @@ public class Lista_DB extends SQLiteOpenHelper {
         String TabelaLista
                 = "CREATE TABLE Lista (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nome TEXT," +
-                "quantidade TEXT)";
+                "quantidade INTERGER)";
 
         db.execSQL(TabelaLista);
     }

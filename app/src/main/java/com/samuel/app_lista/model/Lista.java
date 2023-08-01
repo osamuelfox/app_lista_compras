@@ -9,7 +9,7 @@ public class Lista {
     public Lista() {
     }
 
-    public Lista(String nome, int quantidade) {
+    public Lista(String nome, Integer quantidade) {
         this.nome = nome;
         this.quantidade = quantidade;
     }
@@ -22,11 +22,11 @@ public class Lista {
         this.nome = nome;
     }
 
-    public int getQuantidade() {
+    public Integer getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 
@@ -36,5 +36,36 @@ public class Lista {
                 "nome='" + nome + '\'' +
                 ", quantidade=" + quantidade +
                 '}';
+    }
+
+
+    public static class ListaBuilder{
+
+        private String nome;
+        private Integer quantidade;
+
+        public ListaBuilder setNome(String nome) {
+            this.nome = nome;
+            return this;
+        }
+
+        public ListaBuilder setQuantidade(Integer quantidade) {
+            this.quantidade = quantidade;
+            return this;
+        }
+
+        private ListaBuilder(){}
+
+        public static ListaBuilder builder (){
+            return new ListaBuilder();
+        }
+
+        public  Lista build(){
+            Lista lista = new Lista();
+            lista.nome = nome;
+            lista.quantidade = quantidade;
+            return lista;
+
+        }
     }
 }
