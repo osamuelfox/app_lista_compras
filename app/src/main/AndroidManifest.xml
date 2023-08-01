@@ -14,7 +14,13 @@
         android:theme="@style/Theme.App_lista_de_dedidos"
         tools:targetApi="31">
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.Lista_de_pedidos"
+            android:exported="false" />
+        <activity
+            android:name=".view.Tela_principal"
+            android:exported="false" />
+        <activity
+            android:name=".view.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
