@@ -12,10 +12,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import devandroid.kauamatheus.listadepedidos.Controller.Controller_lista;
 import devandroid.kauamatheus.listadepedidos.Controller.ListaItensController;
 import devandroid.kauamatheus.listadepedidos.Model.Adapter;
 import devandroid.kauamatheus.listadepedidos.Model.Interface;
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
     Spinner spinner;
     EditText editNome;
     EditText editQuantidade;
+
+    Controller_lista controller_lista;
+
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -98,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
      */
     public void listenersButtons() {
 
+        controller_lista = new Controller_lista(MainActivity.this);
+
+
         adc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +116,9 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
 //              itens.setNome(editNome.getText().toString());
                 itens.setQntd(editQuantidade.getText().toString());
 
+                controller_lista.salvar(itens);
+
+                Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
 
                 itemListas.add(itens);
                 adapter.notifyDataSetChanged();

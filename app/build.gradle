@@ -3,13 +3,12 @@ plugins {
 }
 
 android {
-    namespace 'devandroid.kauamatheus.listadepedidos'
     compileSdk 33
 
     defaultConfig {
         applicationId "devandroid.kauamatheus.listadepedidos"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 

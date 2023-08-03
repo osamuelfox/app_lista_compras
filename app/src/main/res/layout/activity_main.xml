@@ -16,29 +16,10 @@
             android:gravity="center"
             android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/TextTitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="@string/supermercado_bahamas"
-                android:textColor="#FF5722"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="158dp"
-                android:layout_height="124dp"
-                android:layout_marginTop="30dp"
-                app:srcCompat="@drawable/cesta_de_compras" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -52,8 +33,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="@string/itens_disponiveis"
-                        android:textColor="#FE5722"
+                        android:text="Itens Disponiveis"
                         android:textStyle="bold"
                         tools:ignore="InefficientWeight" />
 
@@ -74,7 +54,7 @@
 
                     <EditText
                         android:id="@+id/editAdicionarItem"
-                        android:layout_width="match_parent"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
@@ -86,10 +66,18 @@
                         android:id="@+id/editQuantidade"
                         android:layout_width="57dp"
                         android:layout_height="match_parent"
-                        android:layout_marginRight="150dp"
                         android:ems="10"
                         android:hint="Qntd"
                         android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/idButtonAdicionar"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#3F51B4"
+                        android:text="Adicionar" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -99,16 +87,7 @@
                     android:orientation="horizontal">
 
 
-                    <Button
-                        android:id="@+id/idButtonAdicionar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="50dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#3F51B4"
-                        android:text="Adicionar à cesta" />
+
 
                 </LinearLayout>
 
@@ -177,24 +156,21 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:orientation="vertical">
 
-                        <View
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/RecyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/darker_gray" />
+                            tools:listitem="@layout/activity_order_item"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="20dp" />
 
                     </LinearLayout>
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/RecyclerView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        tools:listitem="@layout/activity_order_item"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp" />
 
                 </LinearLayout>
 
