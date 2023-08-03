@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import devandroid.kauamatheus.listadepedidos.Controller.Controller_lista;
-import devandroid.kauamatheus.listadepedidos.Controller.ListaItensController;
+//import devandroid.kauamatheus.listadepedidos.Controller.ListaItensController;
 import devandroid.kauamatheus.listadepedidos.Model.Adapter;
 import devandroid.kauamatheus.listadepedidos.Model.Interface;
 import devandroid.kauamatheus.listadepedidos.Model.Item;
@@ -48,22 +48,22 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListaItensController listacontroller = new ListaItensController();
+//        ListaItensController listacontroller = new ListaItensController();
+//
+//        listacontroller = new ListaItensController();
+//        itens = listacontroller.itens_spinner();
+//        listacontroller.getListaItens();
 
-        listacontroller = new ListaItensController();
-        itens = listacontroller.itens_spinner();
-        listacontroller.getListaItens();
-
-        spinner = findViewById(R.id.spinner);
+//        spinner = findViewById(R.id.spinner);
         editNome = findViewById(R.id.editAdicionarItem);
         editQuantidade = findViewById(R.id.editQuantidade);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listacontroller.itens_spinner());
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listacontroller.itens_spinner());
 
-        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        spinner.setAdapter(adapter);
+//        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+//        spinner.setAdapter(adapter);
 
-        spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listacontroller.getListaItens()));
+//        spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listacontroller.getListaItens()));
 
         setaRecyclerView();
 
