@@ -4,15 +4,19 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import devandroid.kauamatheus.listadepedidos.R;
+import devandroid.kauamatheus.listadepedidos.View.MainActivity;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.RecyclerTesteViewHolder> {
 
@@ -39,6 +43,31 @@ public class Adapter extends RecyclerView.Adapter<Adapter.RecyclerTesteViewHolde
         viewHolder.viewNome.setText(item.getNome());
         viewHolder.viewQntd.setText(item.getQntd());
 
+        Button bt_delete = viewHolder.button;
+        bt_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+                deleteContact();
+                notifyDataSetChanged();
+
+
+                //                Toast.makeText(MainActivity.this, " Delete ", Toast.LENGTH_SHORT).show();
+
+
+
+
+            }
+        });
+
+
+    }
+
+    public void deleteContact( ) {
+        if (mList.size() > 0) {
+            mList.remove(0);
+//            mList(new ArrayList(mList)); // DiffUtil takes care of the check
+        }
     }
 
     @Override
@@ -51,12 +80,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.RecyclerTesteViewHolde
 
         protected TextView viewNome;
         protected TextView viewQntd;
+        protected Button button;
 
         public RecyclerTesteViewHolder(final View itemView) {
             super(itemView);
 
             viewNome = (TextView) itemView.findViewById(R.id.TextViewNome);
             viewQntd = (TextView) itemView.findViewById(R.id.textViewQnt);
+            button = (Button) itemView.findViewById(R.id.button);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

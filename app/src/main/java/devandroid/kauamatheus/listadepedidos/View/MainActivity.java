@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
 
     Controller_lista controller_lista;
 
+    Button bt_delete;
+
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -48,6 +51,12 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+
+
+
 //        ListaItensController listacontroller = new ListaItensController();
 //
 //        listacontroller = new ListaItensController();
@@ -57,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
 //        spinner = findViewById(R.id.spinner);
         editNome = findViewById(R.id.editAdicionarItem);
         editQuantidade = findViewById(R.id.editQuantidade);
+
+        bt_delete = findViewById(R.id.button);
 
 //        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listacontroller.itens_spinner());
 
@@ -69,6 +80,15 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
 
         setaButtons();
         listenersButtons();
+
+//        bt_delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Toast.makeText(MainActivity.this, " Delete ", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
     }
 
@@ -125,6 +145,12 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
 
             }
         });
+
     }
+//
+//    public void deleteFirstContact(View view) {
+//        adapter.deleteContact();
+//
+//    }
 }
 
